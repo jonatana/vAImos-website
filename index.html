@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,44 +12,52 @@
             --dark-color: #075E54;
             --light-color: #DCF8C6;
         }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
         }
+
         header {
             background: var(--primary-color);
             color: white;
             text-align: center;
             padding: 2rem;
         }
+
         nav {
             background: var(--secondary-color);
             padding: 1rem;
         }
+
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 1rem;
         }
+
         .container {
             max-width: 1100px;
             margin: auto;
             padding: 0 2rem;
         }
+
         .services {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             padding: 2rem 0;
         }
+
         .service-card {
             border: 1px solid #ddd;
             padding: 1rem;
             border-radius: 8px;
             text-align: center;
         }
+
         .cta-button {
             background: var(--primary-color);
             color: white;
@@ -59,6 +68,7 @@
             display: inline-block;
             margin: 1rem 0;
         }
+
         footer {
             background: var(--dark-color);
             color: white;
@@ -68,8 +78,55 @@
             bottom: 0;
             width: 100%;
         }
+
+        .contact-form {
+        max-width: 500px;
+        margin: 2rem auto;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+    
+    .form-group textarea {
+        resize: vertical;
+    }
+    
+    .error-message {
+        color: #dc3545;
+        margin: 1rem 0;
+        text-align: center;
+    }
+    
+    .cta-button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    /* Add red asterisk to required fields */
+    .form-group label[for="fullName"]::after,
+    .form-group label[for="message"]::after {
+        content: " *";
+        color: #dc3545;
+    }
     </style>
 </head>
+
 <body>
     <header>
         <h1>vAImos Automation Services</h1>
@@ -105,13 +162,42 @@
 
         <section id="about">
             <h2>אודות</h2>
-            <p>אנחנו מספקים פתרונות אוטומציה מתקדמים המאפשרים לעסקים קטנים ובינוניים לנהל את התקשורת עם הלקוחות שלהם ביעילות דרך WhatsApp.</p>
+            <p>אנחנו מספקים פתרונות אוטומציה מתקדמים המאפשרים לעסקים קטנים ובינוניים לנהל את התקשורת עם הלקוחות שלהם
+                ביעילות דרך WhatsApp.</p>
         </section>
 
         <section id="contact">
             <h2>צור קשר</h2>
             <p>נשמח לעזור לך להתאים את הפתרון המושלם לעסק שלך</p>
-            <a href="mailto:jonatana@vaimos.net" class="cta-button">דבר איתנו ב-WhatsApp</a>
+
+            <form action="https://formspree.io/f/xldnleen" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="fullName">שם מלא *</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">אימייל</label>
+                    <input type="email" id="email" name="email" oninput="validateContactMethod()">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">טלפון נייד</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="0501234567"
+                        oninput="validateContactMethod()">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">הודעה *</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <div id="formError" class="error-message" style="display: none;">
+                    נא למלא לפחות אימייל או טלפון נייד
+                </div>
+
+                <button type="submit" class="cta-button" onclick="return validateForm(event)">שלח הודעה</button>
+            </form>
         </section>
     </main>
 
@@ -119,4 +205,28 @@
         <p>&copy; 2025 vAImos Automation Services. כל הזכויות שמורות.</p>
     </footer>
 </body>
-</html> 
+
+<script>
+    function validateContactMethod() {
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const errorDiv = document.getElementById('formError');
+        
+        if (email || phone) {
+            errorDiv.style.display = 'none';
+            return true;
+        }
+        return false;
+    }
+    
+    function validateForm(event) {
+        if (!validateContactMethod()) {
+            event.preventDefault();
+            document.getElementById('formError').style.display = 'block';
+            return false;
+        }
+        return true;
+    }
+</script>
+
+</html>
