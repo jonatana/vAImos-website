@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vAImos Automation Services</title>
+    <style>
+        :root {
+            --primary-color: #25D366;
+            --secondary-color: #128C7E;
+            --dark-color: #075E54;
+            --light-color: #DCF8C6;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        nav {
+            background: var(--secondary-color);
+            padding: 1rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 2rem;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        .service-card {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .cta-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 1rem 0;
+        }
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>vAImos Automation Services</h1>
+        <p>פתרונות אוטומציה חכמים לעסקים</p>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="#services">שירותים</a>
+            <a href="#about">אודות</a>
+            <a href="#contact">צור קשר</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="services" class="services">
+            <div class="service-card">
+                <h3>ניהול תורים אוטומטי</h3>
+                <p>מערכת חכמה לניהול תורים דרך WhatsApp</p>
+                <p>קביעת תורים, תזכורות ועדכונים אוטומטיים</p>
+            </div>
+            <div class="service-card">
+                <h3>מענה אוטומטי</h3>
+                <p>מענה מיידי לשאלות נפוצות</p>
+                <p>זמינות 24/7 ללקוחות שלך</p>
+            </div>
+            <div class="service-card">
+                <h3>ניהול לקוחות</h3>
+                <p>מעקב אחר היסטוריית לקוחות</p>
+                <p>ניהול מאגר לקוחות חכם</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>אודות</h2>
+            <p>אנחנו מספקים פתרונות אוטומציה מתקדמים המאפשרים לעסקים קטנים ובינוניים לנהל את התקשורת עם הלקוחות שלהם ביעילות דרך WhatsApp.</p>
+        </section>
+
+        <section id="contact">
+            <h2>צור קשר</h2>
+            <p>נשמח לעזור לך להתאים את הפתרון המושלם לעסק שלך</p>
+            <a href="mailto:jonatana@vaimos.net" class="cta-button">דבר איתנו ב-WhatsApp</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 vAImos Automation Services. כל הזכויות שמורות.</p>
+    </footer>
+</body>
+</html> 
