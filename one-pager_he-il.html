@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaiMOS - דף מידע</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 12px;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.5;
+            color: #1a202c;
+            background: white;
+            direction: rtl;
+        }
+        
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 10mm;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+        }
+        
+        .header {
+            margin-bottom: 2mm;
+            border-bottom: 2px solid #1a365d;
+            padding-bottom: 2mm;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 34px;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: -1mm;
+            direction: ltr;
+        }
+        
+        .tagline {
+            font-size: 13px;
+            color: #4a5568;
+            font-weight: 500;
+        }
+        
+        .section {
+            margin-bottom: 3mm;
+        }
+
+        .section-box {
+        background: #f7fafc;
+        border: 1px solid #e2e8f0;
+        border-left: 2px solid #f97316;
+        border-right: 2px solid #f97316;
+        padding: 4mm;
+        margin-bottom: 3mm;
+      }
+        
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 2mm;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .section-content {
+            color: #2d3748;
+        }
+        
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8mm;
+        }
+        
+        .product-box {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-left: 3px solid #f97316;
+             border-right: 3px solid #f97316;
+            padding: 4mm;
+            margin-bottom: 4mm;
+        }
+        
+        .product-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 1mm;
+        }
+        
+        .product-subtitle {
+            font-style: italic;
+            margin-bottom: 2mm;
+        }
+        
+        .product-detail {
+            margin-bottom: 2mm;
+        }
+        
+        .product-detail strong {
+            font-weight: 700;
+        }
+        
+        .highlight-box {
+            background: #fff7ed;
+            border-left: 2px solid #f97316;
+            border-right: 3px solid #f97316;
+            padding: 3mm;
+            margin: 0mm 0;
+            text-align: center;
+        }
+        
+        .highlight-text {
+            color: #000000;
+        }
+
+        .comparison-box {
+        background: #fff7ed;
+        border: 1px solid #fed7aa;
+        padding: 3mm;
+        margin-top: 3mm;
+        text-align: right;
+      }
+
+      .comparison-box-title {
+        font-weight: 700;
+
+        color: #1a365d;
+      }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3mm;
+            margin-top: 0.5mm;
+        }
+        
+        .comparison-item {
+            background: #f7fafc;
+            padding: 1mm;
+            border-radius: 2mm;
+        }
+        
+        .comparison-title {
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 1mm;
+        }
+        
+        .principles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4.5mm;
+            margin-top: 2mm;
+        }
+        
+           
+        .principle-title {
+            font-weight: 700;
+            color: #f97316;
+            margin-bottom: 1mm;
+        }
+        
+        .stats-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2mm;
+        }
+        
+        .stat {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .stat-number {
+            font-size: 18px;
+            font-weight: 700;
+            color: #f97316;
+        }
+        
+        .stat-label {
+            font-size: 8px;
+            color: #4a5568;
+            margin-top: 1mm;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 15mm;
+            left: 15mm;
+            right: 15mm;
+            padding-top: 4mm;
+            border-top: 1px solid #1a365d;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8mm;
+            font-size: 9px;
+        }
+        
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5mm;
+        }
+        
+              
+        .contact-label {
+            font-weight: 600;
+            color: #1a365d;
+        }
+        
+        .vision-box {
+            background: #fff7ed;
+            padding: 3mm;
+            border-left: 2px solid #f97316;
+        border-right: 2px solid #f97316;
+            margin: 3mm 0;
+        margin-bottom: 6mm;
+            color: #1a202c;
+        }
+
+        .english {
+            direction: ltr;
+            display: inline-block;
+        }
+
+        .display-none {
+            display: none;
+        }
+
+        .ai-text {
+        /*color: #1a365d;*/
+        font-family: Georgia, 'Courier New', serif;
+      }
+        
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="header">
+            <div class="english logo">VaiMOS</div>
+            <div class="tagline">בינה מלאכותית שעושה את העבודה</div>
+        </div>
+
+        <div class="section-box">
+            <div class="section-title">קהל יעד</div>
+            <div class="section-content">
+              עצמאים ועסקים קטנים (1-10 אנשים) תקועים בין כלים לצרכן פרטי שלא יכולים להתמודד עם עבודה מקצועית לבין תוכנות המיועדות לארגונים, והן מורכבות מדי ויקרות מדי. כיום כלים "מופעלי <span class="english ai-text">AI</span>"  עושים הרבה רעש ובאז, אבל למעשה הם רק מזרזים את קצב העבודה, לא מפחיתים אותה.<br /><strong>עסקים אלה צריכים בינה מלאכותית שמפחיתה עבודה, לא רק מאיצה אותה.</strong>
+            </div>
+        </div>
+
+        <div class="vision-box">
+                <div class="section-title">החזון</div> 
+                <div>תיק כלים <span class="english"><span class="ai-text">AI</span>-native</span> אמין שנותן לעסקים קטנים ועצמאים יכולות שדרשו בעבר עובדים במשרה מלאה, ללא המורכבות או העלות.<br />כלי אחד בכל פעם. תוצאה אחת בכל פעם.</div>
+            </div>
+
+        <div class="two-col">
+            
+            <div>
+                <div class="product-box">
+                    <div class="product-title english">VaiMOS Schedule Tool</div>
+                    <div class="product-subtitle">העוזר שלך לתיאום פגישות בוואטסאפ (זמין עכשיו)</div>
+                    
+                    <div class="product-detail">
+                        <strong>תאור:</strong> עונה לבקשות תיאום תורים 24/7, בודק את היומן שלך, קובע פגישות אוטומטית, מטפל בביטולים ושינויים. תמיכה רב-לשונית.
+                    </div>
+                    
+                    <div class="product-detail">
+                        <strong>למי זה מתאים:</strong> ספקי שירותים עצמאיים כגון מאמנים, מורים פרטיים, מעצבי שיער, יועצים, קוסמטיקאית, מניקוריסטיות, ועוד.
+                    </div>
+                    
+                    <div class="product-detail">
+                        <strong>התוצאה:</strong> חיסכון של 5-10 שעות עבודת יומן בשבוע.<br/> אפס עיכובים בתגובה, אפס לקוחות אבודים.
+                    </div>
+                    
+                    <div class="product-detail">
+                        <strong>מחיר:</strong> ₪149/חודש.<br />תיאומים ללא הגבלה, ללא חיוב לפי הודעה.
+                    </div>
+                </div>
+
+                <div class="product-box">
+                    <div class="product-title english">VaiMOS Reminders Tool</div>
+                    <div class="product-subtitle">תזכורות אוטומטיות, אישורי הגעה ומעקבים (בפיתוח)</div>
+                    
+                    <div class="product-detail">
+                        <strong>תאור:</strong> שולח תזכורות מותאמות אישית לפני פגישות, מטפל באישורי הגעה, שולח מעקבים אחרי הפגישה ובקשות למשוב.
+                    </div>
+                    
+                    <div class="product-detail">
+                        <strong>התוצאה:</strong>  הפחתה של אי-הגעות, חיסכון יומיומי בזמן של תזכורות ידניות, הקפדה על פולו-אפ עם לקוחות.
+                    </div>
+                    
+                    <div class="product-detail">
+                        <strong>מחיר:</strong>  ₪49/חודש. חבילה עם <span class="english">Schedule Tool</span>: ₪179/חודש
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="section-box">
+                    <div class="section-title">למה <span class="english">V<span style="text-transform: lowercase;">ai</span>MOS</span> שונה</div>
+                    <div
+              style="
+                text-align: rigth;
+                margin-top: 1mm;                
+                font-weight: 600;
+              "
+            >
+              עם כלי <span class="ai-text english">AI</span> אחרים:
+            </div>
+                    <div class="comparison-grid">
+                        <div class="comparison-item">
+                            <div class="comparison-title">כלים "מופעלי <span class="english ai-text">AI</span>"</div>
+                            <span class="english ai-text">AI</span> עוזר לך לעבוד מהר יותר (אתה עדיין עושה את העבודה)
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-title"><span class="english ai-text">AI</span> ארגוני</div>
+                            <br />
+                            בנוי לקנה מידה גדול, תמחור לפי משתמש, דורש הקמה של IT
+                        </div>
+                        <div class="comparison-item">
+                            <div class="comparison-title"><span class="english ai-text">AI</span> כללי</div>
+                            <br />
+                            דורש הנחיות, אין הקשר עסקי
+                        </div>
+                    </div>
+                    <div class="comparison-box">
+                      <div class="comparison-box-title">עם VaiMOS:</div>
+                      <div><span class="english ai-text">AI</span> עושה את העבודה בשבילך. אתה רק סורק תוצאות.</div>
+                    </div>
+                </div>
+
+                <div class="section-box" style="margin-top: 0mm;">
+                    <div class="section-title">העקרונות שלנו</div>
+                    <div class="principles-grid">
+                        <div class="principle">
+                            <div class="principle-title">דגש על תוצאות</div>
+                            אנחנו מדברים על שעות עבודה שנחסכו, לא על מודלים או אלגוריתמים
+                        </div>
+                        <div class="principle">
+                            <div class="principle-title">100% שקיפות</div>
+                            נהיה כנים איתך לגבי היכולות האמיתיות של <span class="ai-text english">AI</span>, בלי הבטחות שווא
+                        </div>
+                        <div class="principle">
+                            <div class="principle-title">תמחור הוגן</div>
+                            מחירים חודשיים קבועים. ללא חיוב לפי פעולה או משתמש
+                        </div>
+                        <div class="principle">
+                            <div class="principle-title">בנוי על ידי מפעילים</div>
+                            אנחנו מבינים תקציבים, מגבלות וצורת חשיבה של עסק קטן
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section display-none">
+                    <div class="section-title">מצב נוכחי</div>
+                    <div class="stats-row">
+                        <div class="stat">
+                            <div class="stat-number">[X]</div>
+                            <div class="stat-label">לקוחות ישראלים</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">[X,XXX]</div>
+                            <div class="stat-label">שעות שנחסכו/חודש</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">[XX]%</div>
+                            <div class="stat-label">דיוק הבינה המלאכותית</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">שפות</div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <div class="highlight-text">מבחן <strong class="english">VaiMOS</strong>: אם היית מסיר את הבינה המלאכותית, המוצר עדיין היה עובד? אם כן, הוא לא באמת 
+                <span class="english"><span class="ai-text">AI</span>-native</span>.</div>
+        </div>
+
+        <div class="footer">
+            
+            <div class="contact-section">
+                <div class="contact-item display-none">
+                    <span class="contact-label">נסה את <span class="english">Vaimos Schedule:</span></span> [קבע שיחת הקמה]
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">אימייל:</span> <span class="english">jonatana@vaimos.net</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">אתר:</span> <span class="english">vaimos.net</span>
+                </div>
+            </div>
+             <div class="section">
+          <div class="section-content" style="text-align: left">
+            נוצר בישראל בגאווה | נוסד 2025<br />v 1.0
+          </div>
+        </div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-print functionality (optional - comment out if not needed)
+        // window.onload = function() { window.print(); }
+    </script>
+</body>
+</html>

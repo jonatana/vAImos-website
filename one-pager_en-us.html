@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vAIMmos One-Pager</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 12px;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
+          sans-serif;
+        line-height: 1.4;
+        color: #000000; /*#1a202c*/
+        background: white;
+      }
+
+      .page {
+        width: 210mm;
+        height: 297mm;
+        padding: 10mm;
+        margin: 0 auto;
+        background: white;
+        position: relative;
+      }
+
+      .header {
+        margin-bottom: 2mm;
+        border-bottom: 2px solid #1a365d;
+        padding-bottom: 2mm;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .logo {
+        font-size: 34px;
+        font-weight: 700;
+        color: #1a365d;
+        margin-bottom: -1mm;
+      }
+
+      .tagline {
+        font-size: 13px;
+        color: #4a5568;
+        font-weight: 500;
+      }
+
+      .section {
+        margin-bottom: 3mm;
+      }
+
+      .section-box {
+        background: #f7fafc;
+        border: 1px solid #e2e8f0;
+        border-left: 2px solid #f97316;
+        border-right: 2px solid #f97316;
+        padding: 4mm;
+        margin-bottom: 4mm;
+      }
+
+      .section-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #1a365d;
+        margin-bottom: 2mm;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .section-content {
+        color: #2d3748;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8mm;
+      }
+
+      .product-box {
+        background: #f7fafc;
+        border: 1px solid #e2e8f0;
+        border-left: 2px solid #f97316;
+        border-right: 2px solid #f97316;
+        padding: 4mm;
+        margin-bottom: 4mm;
+      }
+
+      .product-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #1a365d;
+        margin-bottom: 1mm;
+      }
+
+      .product-subtitle {
+        /*color: #4a5568;*/
+        font-style: italic;
+        margin-bottom: 2mm;
+      }
+
+      .product-detail {
+        margin-bottom: 2mm;
+      }
+
+      .product-detail strong {
+        /*color: #1a365d;*/
+        font-weight: 700;
+      }
+
+      .highlight-box {
+        background: #fff7ed;
+        border-left: 2px solid #f97316;
+        border-right: 2px solid #f97316;
+        padding: 3mm;
+        margin: 0mm 0;
+        text-align: center;
+      }
+
+      .highlight-text {
+        color: #000000;
+      }
+
+      .bullet-list {
+        margin-left: 5mm;
+      }
+
+      .bullet-list li {
+        margin-bottom: 1.5mm;
+      }
+
+      .comparison-box {
+        background: #fff7ed;
+        border: 1px solid #fed7aa;
+        padding: 3mm;
+        margin-top: 3mm;        
+      }
+
+      .comparison-box-title {
+        font-weight: 700;
+
+        color: #1a365d;
+      }
+
+      .comparison-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3mm;
+        margin-top: 0.5mm;
+      }
+
+      .comparison-item {
+        background: #f7fafc;
+        padding: 1mm;
+        border-radius: 2mm;
+      }
+
+      .comparison-title {
+        font-weight: 700;
+        color: #000000; /*#1a365d;*/
+        margin-bottom: 1mm;
+      }
+
+      .principles-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4.5mm;
+        margin-top: 2mm;
+      }
+
+      
+      .principle-title {
+        font-weight: 700;
+        color: #f97316;
+        margin-bottom: 1mm;
+      }
+
+      .stats-row {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2mm;
+      }
+
+      .stat {
+        text-align: center;
+        flex: 1;
+      }
+
+      .stat-number {
+        font-size: 18px;
+        font-weight: 700;
+        color: #f97316;
+      }
+
+      .stat-label {
+        font-size: 8px;
+        color: #4a5568;
+        margin-top: 1mm;
+      }
+
+      .footer {
+        position: absolute;
+        bottom: 15mm;
+        left: 15mm;
+        right: 15mm;
+        padding-top: 4mm;
+        border-top: 1px solid #1a365d;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8mm;
+        font-size: 9px;
+      }
+
+      .contact-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5mm;
+      }
+
+      
+      .contact-label {
+        font-weight: 600;
+        color: #1a365d;
+      }
+
+      .vision-box {
+        background: #fff7ed;
+        /*border: 1px solid #fed7aa;*/
+        padding: 3mm;
+        border-left: 2px solid #f97316;
+        border-right: 2px solid #f97316;
+        margin: 3mm 0;
+        margin-bottom: 6mm;
+
+        color: #1a202c;
+      }
+
+      .display-none {
+        display: none;
+      }
+
+      .ai-text {
+        /*color: #1a365d;*/
+        font-family: Georgia, 'Courier New', serif;
+      }
+
+      @media print {
+        body {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="header">
+        <div class="logo">VaiMOS</div>
+        <div class="tagline">
+          <span class="ai-text">AI</span> tools that do the work
+        </div>
+      </div>
+
+      <div class="section-box">
+        <div class="section-title">TARGET CUSTOMERS</div>
+        <div class="section-content">
+          Solo operators and micro-businesses (1-10 people). Those businesses
+          are stuck between consumer tools that can't handle professional
+          workflows and enterprise software that's overbuilt and overpriced.
+          Current "<span class="ai-text">AI</span>-powered" tools just add features to existing products,
+          resulting in more noise and the same amount of work. <br /><strong
+            >Those businesses need <span class="ai-text">AI</span> tools that reduce work, not just speed it
+            up.</strong
+          >
+        </div>
+      </div>
+
+      <div class="vision-box">
+        <div class="section-title">Our Vision</div>
+        <div>
+          An honest portfolio of <span class="ai-text">AI</span>-native tools that give solo operators
+          capabilities previously requiring full-time staff, without the
+          complexity or cost. One tool at a time. One outcome at a time.
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <div class="product-box">
+            <div class="product-title">VaiMOS Schedule Tool</div>
+            <div class="product-subtitle">
+              Your <span class="ai-text">AI</span> receptionist for WhatsApp bookings <br />(Available Now)
+            </div>
+
+            <div class="product-detail">
+              <strong>What it does:</strong> Responds to booking requests 24/7,
+              checks your calendar, books appointments automatically, handles
+              cancellations/reschedules. Multilingual support.
+            </div>
+
+            <div class="product-detail">
+              <strong>Who it's for:</strong> Solo service providers such as
+              therapists, coaches, tutors, stylists, trainers, consultants, etc.
+            </div>
+
+            <div class="product-detail">
+              <strong>The outcome:</strong> Saves 5-10 hours per week. Zero
+              response delays, zero lost clients.
+            </div>
+
+            <div class="product-detail">
+              <strong>Pricing:</strong> ₪149/month. Unlimited bookings, no
+              per-message charges.
+            </div>
+          </div>
+
+          <div class="product-box">
+            <div class="product-title">VaiMOS Reminders Tool</div>
+            <div class="product-subtitle">
+                Automated reminders, RSVP, and follow-ups <br />(In Development)
+            </div>
+
+            <div class="product-detail">
+              <strong>What it does:</strong> Sends personalized reminders before appointments, handles RSVP, sends post-appointment follow-ups and feedback requests.
+            </div>
+
+            <div class="product-detail">
+              <strong>The outcome:</strong> Reduce no-shows, save time daily on manual reminders, never forget to follow up.
+            </div>
+
+            <div class="product-detail">
+              <strong>Pricing:</strong> ₪49/month. Bundle with Schedule tool: ₪179/month
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="section-box">
+            <div class="section-title">Why is V<span style="text-transform: lowercase;">ai</span>MOS Different</div>
+            <div
+              style="
+                text-align: left;
+                margin-top: 1mm;
+                
+                font-weight: 600;
+              "
+            >
+              Other <span class="ai-text">AI</span> Solutions:
+            </div>
+            <div class="comparison-grid">
+              <div class="comparison-item">
+                <div class="comparison-title">"<span class="ai-text">AI</span>-Powered" Tools</div>
+                <span class="ai-text">AI</span> helps you work faster (you still do the work)
+              </div>
+              <div class="comparison-item">
+                <div class="comparison-title">Enterprise <span class="ai-text">AI</span></div>
+                <br />Built for scale, per-seat pricing, requires IT setup
+              </div>
+              <div class="comparison-item">
+                <div class="comparison-title">Generic <span class="ai-text">AI</span></div>
+                <br />Requires prompts, no business context
+              </div>
+            </div>
+            <div class="comparison-box">
+              <div class="comparison-box-title">With VaiMOS:</div>
+              <div><span class="ai-text">AI</span> does the work for you. You only review the results.</div>
+            </div>
+          </div>
+
+          <div class="section-box" style="margin-top: 6mm;">
+            <div class="section-title">Our Principles</div>
+            <div class="principles-grid">
+              <div class="principle">
+                <div class="principle-title">Outcome-Oriented</div>
+                We talk about hours of work saved, not models or algorithms
+              </div>
+              <div class="principle">
+                <div class="principle-title">100% Transparency</div>
+                We are honest about what <span class="ai-text">AI</span> can and can't do. No blank promises.
+              </div>
+              <div class="principle">
+                <div class="principle-title">Priced Fairly</div>
+                Flat monthly rates. No per-seat or per-query hidden charges
+              </div>
+              <div class="principle">
+                <div class="principle-title">
+                  Built by Operators for Operators
+                </div>
+                We understand budgets, constrains and small business mindset
+              </div>
+            </div>
+          </div>
+
+          <div class="section display-none">
+            <div class="section-title">Traction</div>
+            <div class="stats-row">
+              <div class="stat">
+                <div class="stat-number">[X]</div>
+                <div class="stat-label">Israeli Customers</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">[X,XXX]</div>
+                <div class="stat-label">Hours Saved/Month</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">[XX]%</div>
+                <div class="stat-label">ai Accuracy</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Languages</div>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+      <div class="highlight-box">
+        <div class="highlight-text">
+          The <strong>VaiMOS Test</strong>: If you removed the
+          <span class="ai-text">AI</span>, would the product still work? If yes,
+          it's not truly <span class="ai-text">AI</span>-native.
+        </div>
+      </div>
+      <div class="footer">
+        <div class="contact-section">
+          <div class="contact-item">
+            <span class="contact-label">Email:</span> jonatana@vaimos.net
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Web:</span> vaimos.net
+          </div>
+        </div>
+        <div class="section">
+          <div class="section-content" style="text-align: right">
+            Proudly made in Israel | Founded 2025<br />v 1.0
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Auto-print functionality
+      // window.onload = function() { window.print(); }
+    </script>
+  </body>
+</html>
